@@ -273,7 +273,7 @@ export default function HomeScreen({ navigation }) {
                         ) : (
                             <Text style={styles.locationText} numberOfLines={1}>{address}</Text>
                         )}
-                        <Ionicons name="chevron-down" size={16} color="#ff6600" />
+                    
                     </View>
                 </View>
 
@@ -511,510 +511,85 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-    safeArea: { 
-        flex: 1, 
-        backgroundColor: '#fff', 
-        ...Platform.select({ web: { overflowY: 'auto', height: '100vh' } }) 
-    },
-    scrollContainer: { 
-        flexGrow: 1, 
-        paddingBottom: 60 
-    },
-    header: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        paddingHorizontal: 20, 
-        paddingVertical: 15, 
-        backgroundColor: '#fff', 
-        borderBottomWidth: 1, 
-        borderColor: '#f5f5f5' 
-    },
-    deliveryContainer: { 
-        flex: 1, 
-        marginRight: 10 
-    },
-    deliveryTitle: { 
-        fontSize: 10, 
-        color: '#999', 
-        fontWeight: '700', 
-        letterSpacing: 0.8 
-    },
-    locationRow: { 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        marginTop: 4 
-    },
-    locationText: { 
-        fontSize: 14, 
-        fontWeight: 'bold', 
-        color: '#333', 
-        marginRight: 4, 
-        flex: 1 
-    },
-    loaderSpacing: { 
-        marginRight: 5 
-    },
-    headerButtonsRow: { 
-        flexDirection: 'row', 
-        alignItems: 'center' 
-    },
-    cartButton: { 
-        padding: 6, 
-        position: 'relative', 
-        marginRight: 8 
-    },
-    profileButton: { 
-        padding: 4 
-    },
-    cartBadge: { 
-        position: 'absolute', 
-        top: 2, 
-        right: 2, 
-        backgroundColor: '#ff6600', 
-        borderRadius: 10, 
-        minWidth: 18, 
-        height: 18, 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        paddingHorizontal: 4 
-    },
-    cartBadgeText: { 
-        color: '#fff', 
-        fontSize: 10, 
-        fontWeight: 'bold' 
-    },
-    searchBar: { 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        backgroundColor: '#f4f4f4', 
-        marginHorizontal: 20, 
-        marginTop: 15, 
-        borderRadius: 12, 
-        paddingHorizontal: 15, 
-        height: 46 
-    },
-    searchIcon: { 
-        marginRight: 10 
-    },
-    searchInput: { 
-        flex: 1, 
-        fontSize: 15, 
-        color: '#333', 
-        paddingVertical: 8 
-    },
-    bannerContainer: { 
-        marginHorizontal: 20, 
-        marginTop: 20, 
-        borderRadius: 15, 
-        overflow: 'hidden', 
-        height: 130, 
-        position: 'relative' 
-    },
-    bannerImage: { 
-        width: '100%', 
-        height: '100%', 
-        resizeMode: 'cover' 
-    },
-    bannerOverlay: { 
-        ...StyleSheet.absoluteFillObject, 
-        backgroundColor: 'rgba(0,0,0,0.35)', 
-        justifyContent: 'center', 
-        paddingHorizontal: 20 
-    },
-    bannerBadge: { 
-        backgroundColor: '#ff6600', 
-        paddingHorizontal: 8, 
-        paddingVertical: 3, 
-        borderRadius: 5, 
-        alignSelf: 'flex-start', 
-        marginBottom: 6 
-    },
-    bannerBadgeText: { 
-        color: '#fff', 
-        fontSize: 10, 
-        fontWeight: 'bold' 
-    },
-    sectionTitle: { 
-        fontSize: 18, 
-        fontWeight: 'bold', 
-        color: '#222', 
-        marginLeft: 20, 
-        marginTop: 25, 
-        marginBottom: 12 
-    },
-    horizontalScrollStyle: { 
-        flexGrow: 0 
-    },
-    categoriesContainer: { 
-        paddingHorizontal: 15, 
-        paddingBottom: 5 
-    },
-    categoryCard: { 
-        backgroundColor: '#fff', 
-        borderWidth: 1, 
-        borderColor: '#eee', 
-        borderRadius: 12, 
-        paddingHorizontal: 14, 
-        paddingVertical: 8, 
-        marginHorizontal: 5, 
-        alignItems: 'center', 
-        flexDirection: 'row', 
-        height: 40 
-    },
-    activeCategoryCard: { 
-        backgroundColor: '#ff6600', 
-        borderColor: '#ff6600' 
-    },
-    categoryText: { 
-        fontSize: 13, 
-        fontWeight: '600', 
-        color: '#555', 
-        marginLeft: 6 
-    },
-    activeCategoryText: { 
-        color: '#fff' 
-    },
-    productsListContainer: { 
-        marginTop: 5 
-    },
-    productCard: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        paddingHorizontal: 20, 
-        paddingVertical: 18, 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#f9f9f9' 
-    },
-    productDetails: { 
-        flex: 1, 
-        paddingRight: 15 
-    },
-    productName: { 
-        fontSize: 16, 
-        fontWeight: 'bold', 
-        color: '#333', 
-        marginBottom: 5 
-    },
-    productDescription: { 
-        fontSize: 13, 
-        color: '#777', 
-        lineHeight: 18, 
-        marginBottom: 8 
-    },
-    productPrice: { 
-        fontSize: 15, 
-        fontWeight: 'bold', 
-        color: '#2e7d32', 
-        marginTop: 2 
-    },
-    productImageContainer: { 
-        alignItems: 'center', 
-        justifyContent: 'flex-start', 
-        width: 95 
-    },
-    productImage: { 
-        width: 90, height: 90, 
-        borderRadius: 12, 
-        backgroundColor: '#f4f4f4' 
-    },
-    addButton: { 
-        backgroundColor: '#fff', 
-        borderWidth: 1, 
-        borderColor: '#f0f0f0', 
-        borderRadius: 8, 
-        paddingHorizontal: 10, 
-        paddingVertical: 5, 
-        marginTop: -12, 
-        shadowColor: '#000', 
-        shadowOffset: { width: 0, height: 2 }, 
-        shadowOpacity: 0.08, 
-        shadowRadius: 3, 
-        elevation: 3, 
-        width: '100%', 
-        alignItems: 'center' 
-    },
-    addButtonText: { 
-        color: '#ff6600', 
-        fontWeight: 'bold', 
-        fontSize: 11 
-    },
-    addedButton: { 
-        backgroundColor: '#2e7d32', 
-        borderColor: '#2e7d32' 
-    },
-    addedButtonText: { 
-        color: '#fff' 
-    },
-    modalBackdrop: { 
-        flex: 1, 
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-        justifyContent: 'flex-end' 
-    },
-    modalContent: { 
-        backgroundColor: '#fff', 
-        borderTopLeftRadius: 24, 
-        borderTopRightRadius: 24, 
-        paddingTop: 12, 
-        paddingHorizontal: 20, 
-        paddingBottom: Platform.OS === 'ios' ? 35 : 25, 
-        maxHeight: '75%', 
-        shadowColor: '#000', 
-        shadowOffset: { width: 0, height: -4 }, 
-        shadowOpacity: 0.15, 
-        shadowRadius: 5, 
-        elevation: 10 
-    },
-    modalDragIndicator: { 
-        width: 40, 
-        height: 5, 
-        backgroundColor: '#e0e0e0', 
-        borderRadius: 3, 
-        alignSelf: 'center', 
-        marginBottom: 15 
-    },
-    modalHeader: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        marginBottom: 20 
-    },
-    modalTitle: { 
-        fontSize: 20, 
-        fontWeight: 'bold', 
-        color: '#222' 
-    },
-    emptyCartContainer: { 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        paddingVertical: 40 
-    },
-    emptyCartText: { 
-        fontSize: 16, 
-        color: '#999', 
-        marginTop: 12, 
-        fontWeight: '500' 
-    },
-    cartItemsScroll: { 
-        marginBottom: 15 
-    },
-    cartItemCard: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        paddingVertical: 14, 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#f5f5f5' 
-    },
-    cartItemInfo: { 
-        flex: 1 
-    },
-    cartItemName: { 
-        fontSize: 15, 
-        fontWeight: '600', 
-        color: '#333' 
-    },
-    cartItemPrice: { 
-        fontSize: 14, 
-        color: '#2e7d32', 
-        fontWeight: 'bold', 
-        marginTop: 4 
-    },
-    quantityControls: { 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        borderWidth: 1, 
-        borderColor: '#eee', 
-        borderRadius: 8, 
-        padding: 4 
-    },
-    controlBtn: { 
-        padding: 6 
-    },
-    controlText: { 
-        fontSize: 14, 
-        fontWeight: 'bold', 
-        color: '#333', 
-        paddingHorizontal: 12 
-    },
-    cartFooter: { 
-        borderTopWidth: 1, 
-        borderColor: '#f5f5f5', 
-        paddingTop: 15 
-    },
-    totalRow: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        marginBottom: 15 
-    },
-    totalLabel: { 
-        fontSize: 16, 
-        color: '#555', 
-        fontWeight: '500' 
-    },
-    totalValue: { 
-        fontSize: 20, 
-        fontWeight: 'bold', 
-        color: '#222' 
-    },
-    checkoutButton: { 
-        backgroundColor: '#ff6600', 
-        borderRadius: 12, 
-        height: 50, 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        width: '100%' 
-    },
-    checkoutButtonText: { 
-        color: '#fff', 
-        fontSize: 16, 
-        fontWeight: 'bold' 
-    },
-    profileInfoContainer: { 
-        alignItems: 'center', 
-        marginVertical: 20 
-    },
-    profileAvatarLarge: { 
-        width: 70, 
-        height: 70, 
-        borderRadius: 35, 
-        backgroundColor: '#fff3e0', 
-        justifyContent: 'center', 
-        alignItems: 'center', 
-        borderWidth: 1, 
-        borderColor: '#ffe0b2', 
-        marginBottom: 12 
-    },
-    profileAvatarLetter: { 
-        fontSize: 28, 
-        fontWeight: 'bold', 
-        color: '#ff6600' 
-    },
-    profileWelcomeText: { 
-        fontSize: 18, 
-        fontWeight: 'bold', 
-        color: '#222' 
-    },
-    profileEmailText: { 
-        fontSize: 14, 
-        color: '#777', 
-        marginTop: 4 
-    },
-    profileDetailsBox: { 
-        backgroundColor: '#f9f9f9', 
-        borderRadius: 12, 
-        padding: 16, 
-        marginBottom: 15 
-    },
-    profileDetailRow: { 
-        flexDirection: 'row', 
-        alignItems: 'center' 
-    },
-    profileIconSpacing: { 
-        marginRight: 10 
-    },
-    profileDetailLabel: { 
-        fontSize: 11, 
-        color: '#999', 
-        fontWeight: 'bold' 
-    },
-    profileDetailValue: { 
-        fontSize: 14, 
-        color: '#444', 
-        marginTop: 2, 
-        lineHeight: 18 
-    },
-    aboutMenuRow: { 
-        flexDirection: 'row', 
-        justifyContent: 'space-between', 
-        alignItems: 'center', 
-        paddingVertical: 14, 
-        borderBottomWidth: 1, 
-        borderBottomColor: '#f5f5f5', 
-        marginBottom: 20 
-    },
-    aboutMenuLeft: { 
-        flexDirection: 'row', 
-        alignItems: 'center' 
-    },
-    aboutIconSpacing: { 
-        marginRight: 12 
-    },
-    aboutMenuText: { 
-        fontSize: 15, 
-        color: '#333', 
-        fontWeight: '500' 
-    },
-    logoutButton: { 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        paddingVertical: 12, 
-        borderWidth: 1, 
-        borderColor: '#ffcdd2', 
-        borderRadius: 12, 
-        backgroundColor: '#ffebee' 
-    },
-    logoutIconSpacing: { 
-        marginRight: 8 
-    },
-    logoutButtonText: { 
-        color: '#c62828', 
-        fontWeight: 'bold', 
-        fontSize: 14 
-    },
-    aboutScroll: { 
-        marginBottom: 10 
-    },
-    aboutLogoContainer: { 
-        alignItems: 'center', 
-        marginVertical: 15 
-    },
-    aboutAppName: { 
-        fontSize: 22, 
-        fontWeight: 'bold', 
-        color: '#222' 
-    },
-    aboutAppVersion: { 
-        fontSize: 13, 
-        color: '#888', 
-        marginTop: 4 
-    },
-    aboutParagraph: { 
-        fontSize: 14, 
-        color: '#555', 
-        lineHeight: 22, 
-        marginBottom: 12, 
-        textAlign: 'justify' 
-    },
-    aboutDivider: { 
-        height: 1, 
-        backgroundColor: '#eee', 
-        marginVertical: 15 
-    },
-    aboutCreditsTitle: { 
-        fontSize: 16, 
-        fontWeight: 'bold', 
-        color: '#333', 
-        marginBottom: 8 
-    },
-    aboutCreditsText: { 
-        fontSize: 14, 
-        color: '#666', 
-        lineHeight: 22 
-    },
-    flexOne: { 
-        flex: 1 
-    },
-    textBold: { 
-        fontWeight: 'bold' 
-    },
-    techReact: { 
-        fontWeight: 'bold', 
-        color: '#05a5d1' 
-    },
-    techUpstash: { 
-        fontWeight: 'bold', 
-        color: '#00e599' 
-    }
+    safeArea: { flex: 1, backgroundColor: '#fff', ...Platform.select({ web: { overflowY: 'auto', height: '100vh' } }) },
+    scrollContainer: { flexGrow: 1, paddingBottom: 60 },
+    header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 20, paddingVertical: 15, backgroundColor: '#fff', borderBottomWidth: 1, borderColor: '#f5f5f5' },
+    deliveryContainer: { flex: 1, marginRight: 10 },
+    deliveryTitle: { fontSize: 10, color: '#999', fontWeight: '700', letterSpacing: 0.8 },
+    locationRow: { flexDirection: 'row', alignItems: 'center', marginTop: 4 },
+    locationText: { fontSize: 14, fontWeight: 'bold', color: '#333', marginRight: 4, flex: 1 },
+    headerButtonsRow: { flexDirection: 'row', alignItems: 'center' },
+    cartButton: { padding: 6, position: 'relative', marginRight: 8 },
+    profileButton: { padding: 4 },
+    cartBadge: { position: 'absolute', top: 2, right: 2, backgroundColor: '#ff6600', borderRadius: 10, minWidth: 18, height: 18, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 4 },
+    cartBadgeText: { color: '#fff', fontSize: 10, fontWeight: 'bold' },
+    searchBar: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f4f4f4', marginHorizontal: 20, marginTop: 15, borderRadius: 12, paddingHorizontal: 15, height: 46 },
+    searchIcon: { marginRight: 10 },
+    searchInput: { flex: 1, fontSize: 15, color: '#333', paddingVertical: 8 },
+    bannerContainer: { marginHorizontal: 20, marginTop: 20, borderRadius: 15, overflow: 'hidden', height: 130, position: 'relative' },
+    bannerImage: { width: '100%', height: '100%', resizeMode: 'cover' },
+    bannerOverlay: { ...StyleSheet.absoluteFillObject, backgroundColor: 'rgba(0,0,0,0.35)', justifyContent: 'center', paddingHorizontal: 20 },
+    bannerBadge: { backgroundColor: '#ff6600', paddingHorizontal: 8, paddingVertical: 3, borderRadius: 5, alignSelf: 'flex-start', marginBottom: 6 },
+    bannerTitle: { color: '#fff', fontSize: 18, fontWeight: 'bold' },
+    sectionTitle: { fontSize: 18, fontWeight: 'bold', color: '#222', marginLeft: 20, marginTop: 25, marginBottom: 12 },
+    horizontalScrollStyle: { flexGrow: 0 },
+    categoriesContainer: { paddingHorizontal: 15, paddingBottom: 5 },
+    categoryCard: { backgroundColor: '#fff', borderWidth: 1, borderColor: '#eee', borderRadius: 12, paddingHorizontal: 14, paddingVertical: 8, marginHorizontal: 5, alignItems: 'center', flexDirection: 'row', height: 40 },
+    activeCategoryCard: { backgroundColor: '#ff6600', borderColor: '#ff6600' },
+    categoryText: { fontSize: 13, fontWeight: '600', color: '#555', marginLeft: 6 },
+    activeCategoryText: { color: '#fff' },
+    productsListContainer: { marginTop: 5 },
+    productCard: { flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingVertical: 18, borderBottomWidth: 1, borderBottomColor: '#f9f9f9' },
+    productDetails: { flex: 1, paddingRight: 15 },
+    productName: { fontSize: 16, fontWeight: 'bold', color: '#333', marginBottom: 5 },
+    productDescription: { fontSize: 13, color: '#777', lineHeight: 18, marginBottom: 8 },
+    productPrice: { fontSize: 15, fontWeight: 'bold', color: '#2e7d32', marginTop: 2 },
+    productImageContainer: { alignItems: 'center', justifyContent: 'flex-start', width: 95 },
+    productImage: { width: 90, height: 90, borderRadius: 12, backgroundColor: '#f4f4f4' },
+    addButton: { backgroundColor: '#fff', borderWidth: 1, borderColor: '#f0f0f0', borderRadius: 8, paddingHorizontal: 10, paddingVertical: 5, marginTop: -12, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.08, shadowRadius: 3, elevation: 3, width: '100%', alignItems: 'center' },
+    addButtonText: { color: '#ff6600', fontWeight: 'bold', fontSize: 11 },
+    addedButton: { backgroundColor: '#2e7d32', borderColor: '#2e7d32' },
+    addedButtonText: { color: '#fff' },
+    modalBackdrop: { flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)', justifyContent: 'flex-end' },
+    modalContent: { backgroundColor: '#fff', borderTopLeftRadius: 24, borderTopRightRadius: 24, paddingTop: 12, paddingHorizontal: 20, paddingBottom: Platform.OS === 'ios' ? 35 : 25, maxHeight: '75%', shadowColor: '#000', shadowOffset: { width: 0, height: -4 }, shadowOpacity: 0.15, shadowRadius: 5, elevation: 10 },
+    modalDragIndicator: { width: 40, height: 5, backgroundColor: '#e0e0e0', borderRadius: 3, alignSelf: 'center', marginBottom: 15 },
+    modalHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
+    modalTitle: { fontSize: 20, fontWeight: 'bold', color: '#222' },
+    cartItemsScroll: { marginBottom: 15 },
+    cartItemCard: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 14, borderBottomWidth: 1, borderBottomColor: '#f5f5f5' },
+    cartItemInfo: { flex: 1, paddingRight: 10 },
+    cartItemName: { fontSize: 15, fontWeight: '600', color: '#333', marginBottom: 4 },
+    cartItemPrice: { fontSize: 14, fontWeight: 'bold', color: '#2e7d32' },
+    quantityControls: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#f5f5f5', borderRadius: 8, padding: 4 },
+    controlBtn: { paddingHorizontal: 10, paddingVertical: 5 },
+    controlText: { fontSize: 14, fontWeight: 'bold', color: '#333', paddingHorizontal: 4 },
+    cartFooter: { borderTopWidth: 1, borderTopColor: '#eee', paddingTop: 15 },
+    totalRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 15 },
+    totalLabel: { fontSize: 16, fontWeight: '500', color: '#666' },
+    totalValue: { fontSize: 22, fontWeight: 'bold', color: '#222' },
+    checkoutButton: { backgroundColor: '#ff6600', borderRadius: 12, height: 50, justifyContent: 'center', alignItems: 'center' },
+    checkoutButtonText: { color: '#fff', fontSize: 16, fontWeight: 'bold' },
+    emptyCartContainer: { alignItems: 'center', justifyContent: 'center', paddingVertical: 40 },
+    emptyCartText: { fontSize: 16, fontWeight: 'bold', color: '#444', marginTop: 10 },
+    profileInfoContainer: { alignItems: 'center', marginVertical: 15 },
+    profileAvatarLarge: { width: 70, height: 70, borderRadius: 35, backgroundColor: '#ffe6d5', justifyContent: 'center', alignItems: 'center', marginBottom: 12 },
+    profileAvatarLetter: { fontSize: 32, fontWeight: 'bold', color: '#ff6600' },
+    profileWelcomeText: { fontSize: 20, fontWeight: 'bold', color: '#222', marginBottom: 4 },
+    profileEmailText: { fontSize: 14, color: '#777' },
+    profileDetailsBox: { backgroundColor: '#f9f9f9', borderRadius: 14, padding: 15, marginTop: 10, marginBottom: 15 },
+    profileDetailRow: { flexDirection: 'row', alignItems: 'center' },
+    profileDetailLabel: { fontSize: 11, color: '#999', fontWeight: 'bold', textTransform: 'uppercase' },
+    profileDetailValue: { fontSize: 14, color: '#444', marginTop: 2, fontWeight: '500' },
+    aboutMenuRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 14, paddingHorizontal: 5, borderTopWidth: 1, borderBottomWidth: 1, borderColor: '#f0f0f0', marginBottom: 25 },
+    aboutMenuLeft: { flexDirection: 'row', alignItems: 'center' },
+    aboutMenuText: { fontSize: 15, color: '#444', fontWeight: '500' },
+    logoutButton: { flexDirection: 'row', backgroundColor: '#ffebee', borderWidth: 1, borderColor: '#ffcdd2', borderRadius: 12, height: 48, justifyContent: 'center', alignItems: 'center' },
+    logoutButtonText: { color: '#c62828', fontSize: 15, fontWeight: 'bold' },
+    aboutLogoContainer: { alignItems: 'center', marginVertical: 20 },
+    aboutAppName: { fontSize: 22, fontWeight: 'bold', color: '#222' },
+    aboutAppVersion: { fontSize: 13, color: '#999', marginTop: 2 },
+    aboutParagraph: { fontSize: 14, color: '#555', lineHeight: 22, textAlign: 'center', marginBottom: 15, paddingHorizontal: 10 },
+    aboutDivider: { height: 1, backgroundColor: '#eee', marginVertical: 15 },
+    aboutCreditsTitle: { fontSize: 15, fontWeight: 'bold', color: '#333', marginBottom: 10 },
+    aboutCreditsText: { fontSize: 13, color: '#666', lineHeight: 20, marginBottom: 4 }
 });
